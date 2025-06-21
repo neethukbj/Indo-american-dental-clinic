@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="appointmentForm">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="text" id="service" placeholder="Service Needed" required>
+  <input type="date" id="date" required>
+  <input type="time" id="time" required>
+  <button type="submit">Book an Appointment</button>
+</form>
+<script>
+  document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    const message = `Hello, I would like to book an appointment.
+Name: ${name}
+Service: ${service}
+Date: ${date}
+Time: ${time}`;
+
+    const whatsappNumber = "+917558016064"; // Replace with your number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, '_blank');
+  });
+</script>
+
+</body>
+</html>

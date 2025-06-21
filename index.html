@@ -62,6 +62,74 @@
       margin: 0;
       font-size: 1.1rem;
     }
+    /* 🧱 Shared Floating Box Style */
+.custom-float-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+/* Floating Positions */
+.call-float {
+    position: fixed;
+    bottom: 100px;   /* Above WhatsApp */
+    right: 20px;
+    z-index: 100;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+/* Icons */
+.call-float img,
+.whatsapp-float img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Hover Effects */
+.call-float:hover,
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* 🛠️ Responsive Adjustments */
+@media (max-width: 768px) {
+    .call-float {
+        bottom: 80px;
+        right: 15px;
+    }
+
+    .whatsapp-float {
+        bottom: 10px;
+        right: 15px;
+    }
+
+    .custom-float-box {
+        width: 50px;
+        height: 60px;
+        border-radius: 10px;
+    }
+
+    .custom-float-box img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
   </style>
 
 </head>
@@ -92,15 +160,14 @@
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item"><a class="nav-link" href="">Home</a>                                   
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a>                                   
                                 </li>                                
-                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                                 <!-- <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li> -->
                                 <li class="nav-item submenu"><a class="nav-link" href="#">Treatments</a>
                                     <ul>                                        
-                                        <li class="nav-item"><a class="nav-link" href="#">Smile Designing</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Cosmetic Orthodontics</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">Root Canal Treatment</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="service1.html">Smile Designing</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="service2.html">Cosmetic Orthodontics</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="service3.html">Root Canal Treatment</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#">Teeth Whitening</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#">Dental Implants</a></li>
                                         <li class="nav-item"><a class="nav-link" href="#">Restorative Dentistry</a></li>
@@ -113,13 +180,15 @@
 
                                     </ul>
                                 </li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                                <li class="nav-item highlighted-menu"><a class="nav-link" href="appointment.html">Book Appointment</a></li>                               
+                                <!-- <li class="nav-item highlighted-menu"><a class="nav-link" href="contact.html">Book Appointment</a></li>                                -->
                             </ul>
                         </div>
                         <!-- Let’s Start Button Start -->
                         <div class="header-btn d-inline-flex">
-                            <a href="appointment.html" class="btn-default btn-highlighted">book appointment</a>
+                            <button class="btn-default btn-highlighted" data-bs-toggle="modal" data-bs-target="#appointmentModal">book appointment</button>
                         </div>
                         <!-- Let’s Start Button End -->
 					</div>
@@ -152,7 +221,7 @@
                             <p>
             Experience world-class dental care with advanced treatments tailored for your smile. From routine check-ups to specialized implant solutions, we ensure comfort, precision, and long-lasting results.
         </p>
-                            <a href="#" class="btn-default btn-highlighted">book appointment</a>
+                            <a href="#" class="btn-default btn-highlighted"  data-bs-toggle="modal" data-bs-target="#appointmentModal">book appointment</a>
                         </div>
                         <!-- Hero Content Body End --> 
                          
@@ -438,7 +507,7 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="hero-footer-box">
           <div class="icon-box mb-2">
-            <img src="images/icon-process-1.svg" alt="">
+            <img src="images/icon-mail.svg" alt="">
           </div>
           <div class="hero-footer-box-content">
             <h3><span class="counter" data-target="342">0</span>+</h3>
@@ -464,7 +533,7 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="hero-footer-box">
           <div class="icon-box mb-2">
-            <img src="images/icon-experience-year.svg" alt="">
+            <img src="images/icon-hero-footer-1.svg" alt="">
           </div>
           <div class="hero-footer-box-content">
             <h3><span class="counter" data-target="6">0</span>+</h3>
@@ -476,6 +545,27 @@
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -624,6 +714,9 @@
     </div>
     <!-- Our Testimonial Section End -->
 
+
+ 
+
     <!-- We Provide Section Start -->
     <div class="we-provide">
         <div class="container">
@@ -647,9 +740,9 @@
                     <div class="we-provide-image-video">
                         <!-- We Provide Image Start -->
                         <div class="we-provide-image">
-                            <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video" data-cursor-text="Play">
+                            <a href="https://youtube.com/shorts/Sfs1c1o6KnM?si=dBmrnSYdLNhEcRrn" class="popup-video" data-cursor-text="Play">
                                 <figure class="reveal">
-                                    <img src="images/we-provide-image.jpg" alt="">
+                                    <img src="home2.webp" alt="">
                                 </figure>
                             </a>
                         </div>
@@ -657,7 +750,7 @@
 
                         <!-- Video Play Button Start -->
                         <div class="video-play-button">
-                            <a href="https://www.youtube.com/watch?v=Y-x0efG1seA" class="popup-video" data-cursor-text="Play">
+                            <a href="https://youtube.com/shorts/vU6w7e7MFHk?si=A0KaPOw57HI7d3zo" class="popup-video" data-cursor-text="Play">
                                 <i class="fa-solid fa-play"></i>
                             </a>
                         </div>
@@ -823,7 +916,7 @@
                     <div class="col-lg-4">
                         <!-- Footer Booking Btn Start -->
                         <div class="footer-booking-btn">
-                            <a href="#" class="btn-default btn-highlighted">book appointment</a>
+                            <a href="#" class="btn-default btn-highlighted"  data-bs-toggle="modal" data-bs-target="#appointmentModal">book appointment</a>
                         </div>
                         <!-- Footer Booking Btn End -->
                     </div>
@@ -927,6 +1020,9 @@
                     </div>
                     <!-- Footer Contact Info Box End -->
                 </div>
+                 <!-- <a href="https://wa.me/8139048679" class="whatsapp-float" target="_blank">
+                  <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+                </a> -->
             </div>
 
             <!-- Footer Copyright Section Start -->
@@ -945,13 +1041,145 @@
         </div>
     </footer>
     <!-- Footer End -->
+   <!-- Call Floating Button -->
+<a href="tel:+918139048679" class="call-float custom-float-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Call">
+</a>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/+918139048679" class="whatsapp-float custom-float-box" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+</a>
+
+    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content p-4">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentModalLabel"  data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Your form goes here -->
+        <form id="appointmentForm">
+            <div class="row">
+                <div class="form-group col-md-12 mb-4">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" class="form-control" id="name" placeholder="Enter Your Name" required>
+                </div>
+
+                <div class="form-group col-md-6 mb-4">
+                    <label>Service Required</label>
+                    <select name="service" id="service" class="form-control" required>
+                        <option value="">Select a Service</option>
+                        <option value="General Dental Checkup">General Dental Checkup</option>
+                        <option value="Root Canal Treatment">Root Canal Treatment</option>
+                        <option value="Braces & Aligners">Braces & Aligners</option>
+                        <option value="Dental Implants">Dental Implants</option>
+                        <option value="Teeth Whitening">Teeth Whitening</option>
+                        <option value="Tooth Extraction">Tooth Extraction</option>
+                        <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                        <option value="Teeth Cleaning (Scaling)">Teeth Cleaning (Scaling)</option>
+                        <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-6 mb-4">
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter Your Number" required>
+                </div>
+
+                <div class="form-group col-md-6 mb-4">
+                    <label>Preferred Date</label>
+                    <input type="date" name="date" class="form-control" id="date" required>
+                </div>
+
+                <div class="form-group col-md-6 mb-4">
+                    <label>Preferred Time</label>
+                    <select name="time" class="form-control" id="time" required>
+                        <option value="">Select a Time</option>
+                        <option value="09:30 AM">09:30 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="10:30 AM">10:30 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="11:30 AM">11:30 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="12:30 PM">12:30 PM</option>
+                        <option value="01:00 PM">01:00 PM</option>
+                        <option value="01:30 PM">01:30 PM</option>
+                        <option value="02:00 PM">02:00 PM</option>
+                        <option value="02:30 PM">02:30 PM</option>
+                        <option value="03:00 PM">03:00 PM</option>
+                        <option value="03:30 PM">03:30 PM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="04:30 PM">04:30 PM</option>
+                        <option value="05:00 PM">05:00 PM</option>
+                        <option value="05:30 PM">05:30 PM</option>
+                        <option value="06:00 PM">06:00 PM</option>
+                        <option value="06:30 PM">06:30 PM</option>
+                        <option value="07:00 PM">07:00 PM</option>
+                        <option value="07:30 PM">07:30 PM</option>
+                        <option value="08:00 PM">08:00 PM</option>
+                    </select>
+                </div>
+
+           <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">Book on WhatsApp</button>
+            </div>
+            </div>
+        </form>
+      </div>
+    </div>
+</div> 
+
 
     <!-- jQuery must be FIRST -->
 <!-- <script src="js/jquery-3.7.1.min.js"></script> -->
 
+<script>
+  const dateInput = document.getElementById("date");
+
+  dateInput.addEventListener("input", function () {
+    const selectedDate = new Date(this.value);
+    const day = selectedDate.getUTCDay(); // 0 = Sunday, 6 = Saturday
+
+    if (day === 0 || day === 6) {
+      alert("Clinic appointments are only available from Monday to Friday.");
+      this.value = "";
+    }
+  });
+</script>
 
 
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
+    const name = document.getElementById("name").value.trim();
+    const service = document.getElementById("service").value;
+    const phone = document.getElementById("phone").value.trim();
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    const message = `Hello! I would like to book a dental appointment.%0A
+Full Name: ${name}%0A
+Service: ${service}%0A
+Phone: ${phone}%0A
+Preferred Date: ${date}%0A
+Preferred Time: ${time}`;
+
+    const whatsappNumber = "918139048679"; // Replace with your clinic number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(whatsappURL, '_blank');
+    document.getElementById("appointmentForm").reset();
+
+    const appointmentModal = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
+    if (appointmentModal) {
+        appointmentModal.hide();
+    }
+});
+</script>
 
 
 

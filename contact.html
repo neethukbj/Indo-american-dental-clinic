@@ -53,7 +53,8 @@
 				<div class="container">
 					<!-- Logo Start -->
 					<a class="navbar-brand" href="index-2.html">
-						<img src="images/logo.svg" alt="Logo">
+						<img style="height: 70px;width: 150px;" src="logo1.png" alt="Logo">
+                         <!-- <h1>Indo American DEntal and Implant Clinic</h1> -->
 					</a>
 					<!-- Logo End -->
 
@@ -61,36 +62,35 @@
 					<div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item submenu"><a class="nav-link" href="index-2.html">Home</a>
-                                    <ul class="sub-menu">
-                                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-image.html">Home - Image</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-video.html">Home - Video</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-slider.html">Home - Slider</a></li>
-                                    </ul>
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a>                                   
                                 </li>                                
-                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
+                                <!-- <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li> -->
+                                <li class="nav-item submenu"><a class="nav-link" href="#">Treatments</a>
                                     <ul>                                        
-                                        <li class="nav-item"><a class="nav-link" href="service-single.html">Service Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="doctor.html">Doctor</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="doctor-single.html">Doctor Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="testimonials.html">testimonials</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQ's</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="service1.html">Smile Designing</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="service2.html">Cosmetic Orthodontics</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="service3.html">Root Canal Treatment</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Teeth Whitening</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Dental Implants</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Restorative Dentistry</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Laser Dentistry</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Senior Citizen’s Dentistry</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Cosmetic Gum Corrections</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Bad Breath</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Child/Preventive Dentistry</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">Dental Jewels</a></li>
+
                                     </ul>
                                 </li>
+                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                                <li class="nav-item highlighted-menu"><a class="nav-link" href="appointment.html">Book Appointment</a></li>                               
+                                <li class="nav-item highlighted-menu"><a class="nav-link" href="contact.html">Book Appointment</a></li>                               
                             </ul>
                         </div>
                         <!-- Let’s Start Button Start -->
                         <div class="header-btn d-inline-flex">
-                            <a href="appointment.html" class="btn-default btn-highlighted">book appointment</a>
+                            <a href="contact.html" class="btn-default btn-highlighted">book appointment</a>
                         </div>
                         <!-- Let’s Start Button End -->
 					</div>
@@ -249,6 +249,11 @@
         </div>
     </div>
     <!-- Page Contact Us End -->
+
+
+
+
+
 
     <!-- Google Map starts -->
     <div class="google-map">
@@ -418,6 +423,66 @@
         </div>
     </footer>
     <!-- Footer End -->
+
+
+<!-- <script>
+  const dateInput = document.getElementById("date");
+
+  dateInput.addEventListener("input", function () {
+    const selectedDate = new Date(this.value);
+    const day = selectedDate.getUTCDay(); // 0 = Sunday, 6 = Saturday
+
+    if (day === 0 || day === 6) {
+      alert("Clinic appointments are only available from Monday to Friday.");
+      this.value = "";
+    }
+  });
+</script> -->
+
+
+<!-- <script>
+document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    const timeInput = document.getElementById("time").value;
+    const [hour, minute] = timeInput.split(":").map(Number);
+    const totalMinutes = hour * 60 + minute;
+
+    const minTime = 9 * 60 + 30;   // 09:30 AM
+    const maxTime = 20 * 60;       // 08:00 PM
+
+    if (totalMinutes < minTime || totalMinutes > maxTime) {
+        alert("Please choose a time between 09:30 AM and 08:00 PM.");
+        event.preventDefault(); // Stop form from submitting
+        return false;
+    }
+
+    // your existing WhatsApp code...
+});
+</script> -->
+
+
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const service = document.getElementById("service").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    const message = `Hello! I would like to book a dental appointment.%0A
+Full Name: ${name}%0A
+Service: ${service}%0A
+Phone: ${phone}%0A
+Preferred Date: ${date}%0A
+Preferred Time: ${time}`;
+
+    const whatsappNumber = "918139048679"; // Replace with your WhatsApp number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    window.open(whatsappURL, '_blank');
+});
+</script>
 
     <!-- Jquery Library File -->
     <script src="js/jquery-3.7.1.min.js"></script>
