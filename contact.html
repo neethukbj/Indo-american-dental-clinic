@@ -139,7 +139,7 @@
                             <!-- Contact Info Content Start -->
                             <div class="contact-info-content">
                                 <h3>contact details</h3>
-                                <p>+91 9496770077
+                                <p>+91 8139048679
 
 
 
@@ -209,7 +209,7 @@
                         </div>
                         <!-- Section Title End -->
 
-                        <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.5s">
+                        <!-- <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.5s">
                             <div class="row">
                                 <div class="form-group col-md-12 mb-4">
                                     <label>full name</label>
@@ -242,7 +242,40 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </form> -->
+                        <form id="contactForm" class="wow fadeInUp" data-wow-delay="0.5s">
+    <div class="row">
+        <div class="form-group col-md-12 mb-4">
+            <label>full name</label>
+            <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Enter Your Name" required>
+        </div>
+
+        <div class="form-group col-md-6 mb-4">
+            <label>your email</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Enter Your Email" required>
+        </div>
+
+        <div class="form-group col-md-6 mb-4">
+            <label>phone number</label>
+            <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter Your Number" required>
+        </div>
+
+        <div class="form-group col-md-12 mb-4">
+            <label>message</label>
+            <textarea name="message" class="form-control" id="message" rows="7" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="contact-form-btn">
+                <button type="submit" class="btn-default" id="contactSubmit">submit now</button>
+            </div>
+        </div>
+    </div>
+    <div id="msgSubmit" class="h3 hidden" style="margin-top: 15px;"></div>
+
+</form>
+
+
                     </div>
                     <!-- Contact Form End -->
                 </div>
@@ -553,6 +586,51 @@ Preferred Time: ${time}`;
     if (appointmentModal) {
         appointmentModal.hide();
     }
+});
+</script>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Collect values
+    const name = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const msgSubmit = document.getElementById("msgSubmit");
+
+    if (!name || !email || !phone || !message) {
+        msgSubmit.innerHTML = "<span style='color:red;'>Please fill in all fields.</span>";
+        msgSubmit.classList.remove("hidden");
+        return;
+    }
+
+    // WhatsApp message
+    const whatsappText = `Hello, I have a query via the contact form:\n` +
+                     `Name: ${name}\n` +
+                     `Email: ${email}\n` +
+                     `Phone: ${phone}\n` +
+                     `Message: ${message}`;
+
+    const whatsappNumber = "918139048679"; // change to your number
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+    // Clear form
+    document.getElementById("contactForm").reset();
+
+    // Show confirmation
+    msgSubmit.innerHTML = "<span style='color:green;'>✅ Message sent via WhatsApp!</span>";
+    msgSubmit.classList.remove("hidden");
+
+    // Optional: Hide message after 5 seconds
+    setTimeout(() => {
+        msgSubmit.classList.add("hidden");
+        msgSubmit.innerHTML = "";
+    }, 5000);
 });
 </script>
 
