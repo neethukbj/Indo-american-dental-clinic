@@ -381,7 +381,7 @@
 
                     <!-- About Content Btn Start -->
                     <div class="about-content-btn wow fadeInUp" data-wow-delay="0.75s">
-                        <a href="about.html" class="btn-default">read more</a>
+                        <a href="#" class="btn-default">read more</a>
                     </div>
                     <!-- About Content Btn End -->
                 </div>
@@ -1223,6 +1223,44 @@ Preferred Time: ${time}`;
 <!-- YTPlayer -->
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 
+<!-- (Optional) WOW.js if you're using animations -->
+<!-- <script src="js/wow.js"></script> -->
+
+<!-- Initialize CounterUp -->
+<!-- <script>
+  const counters = document.querySelectorAll('.counter');
+  const options = {
+    threshold: 0.5
+  };
+
+  const startCounter = (entry) => {
+    const counter = entry.target;
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 100;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+    observer.unobserve(counter);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounter(entry);
+      }
+    });
+  }, options);
+
+  counters.forEach(counter => observer.observe(counter));
+</script> -->
 
 
 <script>
